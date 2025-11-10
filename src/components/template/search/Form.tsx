@@ -1,6 +1,6 @@
 import IconSearch from '@/assets/icons/icon-search.svg';
 import Button from '@/components/element/button';
-import style from './Search.module.css';
+import style from './Form.module.css';
 
 const Search = () => {
   return (

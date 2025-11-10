@@ -1,14 +1,14 @@
+import Form from '@/components/template/search/Form';
 import SearchNotFound from '@/components/template/search/NotFound';
-import Search from '@/components/template/search/Search';
 
-const Index = () => {
+const Search = () => {
   return (
     <section>
       <h2>도서 검색</h2>
-      <Search />
+      <Form />
       <SearchNotFound />;
     </section>
   );
 };
 
-export default Index;
+export default Search;
