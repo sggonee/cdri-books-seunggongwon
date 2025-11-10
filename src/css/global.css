@@ -4,19 +4,19 @@ html {
 }
 
 /* Headings */
-h1 {
+.heading-lg {
   font-size: var(--text-h1);
   font-weight: var(--font-weight-h1);
   line-height: var(--leading-h1);
 }
 
-h2 {
+.heading-md {
   font-size: var(--text-h2);
   font-weight: var(--font-weight-h2);
   line-height: var(--leading-h2);
 }
 
-h3 {
+.heading-sm {
   font-size: var(--text-h3);
   font-weight: var(--font-weight-h3);
   line-height: var(--leading-h3);
@@ -33,6 +33,12 @@ h3 {
   font-size: var(--text-md);
   font-weight: var(--font-weight-md);
   line-height: var(--leading-md);
+}
+
+.text-md-s {
+  font-size: var(--text-md-s);
+  font-weight: var(--font-weight-md-s);
+  line-height: var(--leading-md-s);
 }
 
 .text-sm {
