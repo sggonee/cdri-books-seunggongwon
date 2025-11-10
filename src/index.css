@@ -1,68 +1,185 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+html {
+  font-size: 62.5%;
+  scroll-behavior: auto;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html,
+body {
+  min-height: 100%;
 }
 
 body {
+  min-width: 36rem;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-size: 1em;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body,
+input,
+textarea,
+select,
+button {
+  line-height: 1.5;
+  letter-spacing: -0.03rem;
+}
+
+[data-newline="true"] {
+  white-space: pre-line;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]) {
+  pointer-events: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+video {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+menu,
+ul,
+ol,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li,
+summary {
+  list-style: none;
+}
+
+em,
+address {
+  font-style: normal;
+}
+
+figure,
+form {
+  margin: 0;
+}
+
+fieldset {
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+
+label {
+  cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+  vertical-align: baseline;
+  margin: 0;
+  border-radius: 0;
+  font-size: 100%;
+  line-height: inherit;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0 none;
+  background: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+input[type="number"] {
+  &::-webkit-inner-spin-button {
+    display: none;
   }
-  a:hover {
-    color: #747bff;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+}
+
+input[type="text"] {
+  background: none;
+  outline: inherit;
+}
+
+textarea {
+  vertical-align: top;
+  resize: vertical;
+}
+
+input:invalid,
+textarea:invalid {
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+td {
+  vertical-align: middle;
+}
+
+select {
+  vertical-align: middle;
+  border-radius: 0;
+}
+
+hr {
+  border-width: 0.1rem 0 0;
+  border-style: solid;
+}
+
+summary {
+  &::-webkit-details-marker {
+    display: none;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+html:has([data-creator-portfolio="true"]) {
+  body {
+    background-color: #fff;
   }
 }
