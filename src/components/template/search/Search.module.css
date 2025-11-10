@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  max-width: 56.8rem;
+  border-radius: 3rem;
+  margin-top: 3.2rem;
+}
+
+.box {
+  position: relative;
+  height: 5rem;
+  width: 100%;
+  padding: 1.2rem 5rem;
+  box-sizing: border-box;
+  border-radius: 10rem;
+  background-color: var(--color-light-gray);
+
+  img {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.input {
+  width: 100%;
+  border: none;
+  font-size: var(--text-md);
+  color: var(--color-text-primary);
+
+  &::placeholder {
+    color: var(--color-text-subtitle);
+  }
+}

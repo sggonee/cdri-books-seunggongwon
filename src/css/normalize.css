@@ -24,7 +24,7 @@ button {
   letter-spacing: -0.03rem;
 }
 
-[data-newline="true"] {
+[data-newline='true'] {
   white-space: pre-line;
 }
 
@@ -124,18 +124,18 @@ button {
   cursor: pointer;
 }
 
-input[type="number"] {
+input[type='number'] {
   &::-webkit-inner-spin-button {
     display: none;
   }
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   vertical-align: middle;
 }
 
-input[type="text"] {
+input[type='text'] {
   background: none;
   outline: inherit;
 }
@@ -176,7 +176,7 @@ summary {
   }
 }
 
-html:has([data-creator-portfolio="true"]) {
+html:has([data-creator-portfolio='true']) {
   body {
     background-color: #fff;
   }
