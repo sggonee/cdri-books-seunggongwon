@@ -1,5 +1,6 @@
 import Button from '@/components/element/button';
 import styles from './Book.module.css';
+import DetailBook from './DetailBook';
 
 interface Props {
   item: {
@@ -9,13 +10,18 @@ interface Props {
     salePrice?: number;
     thumbnail: string;
   };
+  index: number;
+  isOpenDetail: boolean;
+  onOpenDetail: (index: number) => void;
 }
 
-const Book = ({ item }: Props) => {
+const Book = ({ item, index, isOpenDetail, onOpenDetail }: Props) => {
   const { title, publisher, price, salePrice, thumbnail } = item;
 
+  if (isOpenDetail) return <DetailBook item={item} onClose={() => onOpenDetail(-1)} />;
+
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.thumb}>
         <img src={thumbnail} alt="" />
       </div>
@@ -28,11 +34,11 @@ const Book = ({ item }: Props) => {
         <Button variant="primary" size="md">
           구매하기
         </Button>
-        <Button variant="ghost" size="md">
+        <Button variant="ghost" size="md" onClick={() => onOpenDetail(index)}>
           상세보기
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 

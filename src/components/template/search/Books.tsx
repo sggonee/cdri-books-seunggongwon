@@ -1,4 +1,5 @@
 import Book from '@/components/layout/Search/Book';
+import { useState } from 'react';
 import styles from './Books.module.css';
 
 const mock = {
@@ -11,14 +12,19 @@ const mock = {
 };
 
 const Books = () => {
+  const [openDetail, setOpenDetail] = useState(-1);
   return (
-    <ul className={styles.container}>
+    <div className={styles.container}>
       {[mock, mock, mock, mock].map((item, i) => (
-        <li key={i}>
-          <Book item={item} />
-        </li>
+        <Book
+          key={i}
+          index={i}
+          item={item}
+          isOpenDetail={openDetail === i}
+          onOpenDetail={(index: number) => setOpenDetail(index)}
+        />
       ))}
-    </ul>
+    </div>
   );
 };
 

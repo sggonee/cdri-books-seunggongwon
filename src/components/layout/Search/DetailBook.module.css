@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  justify-items: center;
+  gap: 3.2rem;
+  margin-top: 4.7rem;
+  padding: 2.4rem 1.6rem 4rem 5.4rem;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.thumb {
+  max-width: 21rem;
+  width: 100%;
+}
+
+.content {
+  max-width: 36rem;
+  width: 100%;
+}
+
+.purchase {
+  position: relative;
+  max-width: 24rem;
+  width: 100%;
+  margin-left: 1.6rem;
+
+  .price {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.8rem;
+    position: absolute;
+    right: 0;
+    bottom: 7.6rem;
+    text-align: right;
+  }
+
+  .priceLabel {
+    padding-right: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+
+  .originPrice {
+    font-size: 1.8rem;
+    font-weight: 350;
+    color: var(--color-text-secondary);
+
+    &.is--discounted {
+      text-decoration: line-through;
+    }
+  }
+
+  .salePrice {
+    font-size: var(--text-lg);
+    font-weight: 700;
+  }
+}
+
+.func {
+  button {
+    position: absolute;
+
+    &:first-child {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    &:last-child {
+      top: 0;
+      right: 0;
+    }
+  }
+}

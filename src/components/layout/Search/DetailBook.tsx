@@ -1,0 +1,56 @@
+import Button from '@/components/element/button';
+import clsx from 'clsx';
+import styles from './DetailBook.module.css';
+
+interface Props {
+  item: {
+    title: string;
+    publisher: string;
+    price: number;
+    salePrice?: number;
+    thumbnail: string;
+    description?: string;
+  };
+  onClose: () => void;
+}
+
+const DetailBook = ({ item, onClose }: Props) => {
+  const { title, publisher, price, salePrice, thumbnail, description } = item;
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.thumb}>
+        <img src={thumbnail} alt="" />
+      </div>
+      <div className={styles.content}>
+        <strong className={styles.title}>
+          {title}
+          <span className={styles.subtitle}>{publisher}</span>
+        </strong>
+        <p className={styles.sectionTitle}>책 소개</p>
+        <p
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: description ?? '책 소개 문구가 없습니다.' }}
+        />
+      </div>
+      <div className={styles.purchase}>
+        <div className={styles.price}>
+          <span className={styles.priceLabel}>원가</span>
+          <strong className={clsx(styles.originPrice, 'is--discounted')}>{price?.toLocaleString()}원</strong>
+          <span className={styles.priceLabel}>할인가</span>
+          <strong className={clsx(styles.salePrice, 'heading-sm')}>{salePrice?.toLocaleString()}원</strong>
+        </div>
+        <div className={styles.func}>
+          <Button variant="primary" size="md">
+            구매하기
+          </Button>
+          <Button variant="ghost" size="md" onClick={onClose}>
+            상세보기
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DetailBook;
