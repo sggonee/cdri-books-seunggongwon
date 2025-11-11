@@ -1,4 +1,5 @@
 import Button from '@/components/element/button';
+import clsx from 'clsx';
 import styles from './Book.module.css';
 import DetailBook from './DetailBook';
 
@@ -29,7 +30,7 @@ const Book = ({ item, index, isOpenDetail, onOpenDetail }: Props) => {
         <strong className="heading-sm">{title}</strong>
         <b className="text-md-s">{publisher}</b>
       </div>
-      <div className="heading-sm">{salePrice ?? price}원</div>
+      <div className={clsx(styles.price, 'heading-sm')}>{salePrice ?? price}원</div>
       <div className={styles.func}>
         <Button variant="primary" size="md">
           구매하기
