@@ -1,4 +1,5 @@
 import Button from '@/components/element/button';
+import Like from '@/components/element/button/Like';
 import Toggle from '@/components/element/button/Toggle';
 import clsx from 'clsx';
 import styles from './Book.module.css';
@@ -27,6 +28,7 @@ const Book = ({ item, index, isOpenDetail, onOpenDetail }: Props) => {
     <div className={styles.container}>
       <div className={styles.thumb}>
         <img src={thumbnail} alt="" />
+        <Like className={styles.like} active={true} />
       </div>
       <div className={styles.meta}>
         <strong className="heading-sm">{title}</strong>

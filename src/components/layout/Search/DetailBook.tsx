@@ -1,4 +1,5 @@
 import Button from '@/components/element/button';
+import Like from '@/components/element/button/Like';
 import Toggle from '@/components/element/button/Toggle';
 import clsx from 'clsx';
 import styles from './DetailBook.module.css';
@@ -22,6 +23,7 @@ const DetailBook = ({ item, onClose }: Props) => {
     <div className={styles.container}>
       <div className={styles.thumb}>
         <img src={thumbnail} alt="" />
+        <Like className={styles.like} active={false} />
       </div>
       <div className={styles.content}>
         <strong>
