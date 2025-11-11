@@ -1,4 +1,5 @@
 import Button from '@/components/element/button';
+import Toggle from '@/components/element/button/Toggle';
 import clsx from 'clsx';
 import styles from './DetailBook.module.css';
 
@@ -44,9 +45,9 @@ const DetailBook = ({ item, onClose }: Props) => {
           <Button variant="primary" size="md">
             구매하기
           </Button>
-          <Button variant="ghost" size="md" onClick={onClose}>
+          <Toggle variant="ghost" size="md" onClick={onClose} active>
             상세보기
-          </Button>
+          </Toggle>
         </div>
       </div>
     </div>
