@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-left: 0.7rem;
+  }
+}
+
+.container.is--active {
+  img {
+    transform: rotate(180deg);
+  }
+}
