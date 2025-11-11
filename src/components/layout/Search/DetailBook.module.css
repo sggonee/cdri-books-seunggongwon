@@ -15,6 +15,25 @@
 .content {
   max-width: 36rem;
   width: 100%;
+  padding-top: 2rem;
+
+  strong {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    span {
+      &:last-child {
+        color: var(--color-text-subtitle);
+      }
+    }
+  }
+
+  > span {
+    display: block;
+    margin-top: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
 }
 
 .purchase {

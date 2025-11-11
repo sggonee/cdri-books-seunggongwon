@@ -8,8 +8,9 @@ interface Props {
   item: {
     title: string;
     publisher: string;
+    description: string;
     price: number;
-    salePrice?: number;
+    salePrice: number;
     thumbnail: string;
   };
   index: number;

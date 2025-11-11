@@ -7,10 +7,10 @@ interface Props {
   item: {
     title: string;
     publisher: string;
+    description: string;
     price: number;
-    salePrice?: number;
+    salePrice: number;
     thumbnail: string;
-    description?: string;
   };
   onClose: () => void;
 }
@@ -24,12 +24,14 @@ const DetailBook = ({ item, onClose }: Props) => {
         <img src={thumbnail} alt="" />
       </div>
       <div className={styles.content}>
-        <strong className={styles.title}>
-          {title}
-          <span className={styles.subtitle}>{publisher}</span>
+        <strong>
+          <span className="heading-sm">{title}</span>
+          <span className="text-md-s">{publisher}</span>
         </strong>
-        <p className={styles.sectionTitle}>책 소개</p>
-        <p
+        <span className="text-md-s">
+          <b>책 소개</b>
+        </span>
+        <pre
           className={styles.description}
           dangerouslySetInnerHTML={{ __html: description ?? '책 소개 문구가 없습니다.' }}
         />
