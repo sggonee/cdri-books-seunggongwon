@@ -42,7 +42,7 @@ const History = () => {
   return (
     <ul className={styles.container}>
       {history.map((item, index) => (
-        <li key={index}>
+        <li key={index} className="text-md">
           {item}
           <button type="button" className={styles.close} onClick={() => removeHistory(item)}>
             <img src={IconClose} alt="닫기" />
