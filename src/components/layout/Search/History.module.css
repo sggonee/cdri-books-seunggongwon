@@ -8,7 +8,6 @@
   padding-bottom: 1.6rem;
   border-radius: 0 0 3rem 3rem;
   background-color: var(--color-light-gray);
-  color: var(--color-text-subtitle);
   transform: translateY(100%);
 
   &:before {
@@ -22,9 +21,13 @@
     background-color: var(--color-light-gray);
   }
 
-  li {
+  button {
+    display: block;
     position: relative;
+    width: 100%;
     padding: 1.2rem 5rem;
+    color: var(--color-text-subtitle);
+    text-align: left;
   }
 }
 
@@ -32,10 +35,7 @@
   position: absolute;
   right: 2.9rem;
   top: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
   transform: translateY(-50%);
-
-  img {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
 }

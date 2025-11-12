@@ -18,7 +18,7 @@
   border-radius: 10rem;
   background-color: var(--color-light-gray);
 
-  &:focus-within ul {
+  &:focus-within [data-history='open'] {
     display: block;
   }
 
@@ -33,7 +33,7 @@
     width: 100%;
     border: none;
     font-size: var(--text-md);
-    color: var(--color-text-primary);
+    color: var(--color-text-subtitle);
 
     &::placeholder {
       color: var(--color-text-subtitle);

@@ -1,10 +1,14 @@
 import IconClose from '@/assets/icons/icon-close.svg';
+import useSearch from '@/hooks/useSearch';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './History.module.css';
 
 const STORAGE_KEY = 'searchHistory';
 const HISTORY_LIMIT = 8;
+interface Props {
+  selectedValue: (value: string) => void;
+}
 
 const getHistory = () => {
   const saved = localStorage.getItem(STORAGE_KEY);
@@ -15,9 +19,10 @@ const syncHistory = (history: string[]) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
 };
 
-const History = () => {
+const History = ({ selectedValue }: Props) => {
   const [history, setHistory] = useState<string[]>(getHistory());
   const location = useLocation();
+  const { updateQuery } = useSearch();
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -37,19 +42,29 @@ const History = () => {
     syncHistory(newHistory);
   };
 
+  const selectedHistory = (value: string) => {
+    selectedValue(value);
+    updateQuery(value);
+  };
+
   if (!history.length) return null;
 
   return (
-    <ul className={styles.container}>
-      {history.map((item, index) => (
-        <li key={index} className="text-md">
-          {item}
-          <button type="button" className={styles.close} onClick={() => removeHistory(item)}>
-            <img src={IconClose} alt="닫기" />
-          </button>
-        </li>
+    <div className={styles.container} data-history="open">
+      {history.map((value, index) => (
+        <button type="button" key={index} className="text-md" onClick={() => selectedHistory(value)}>
+          {value}
+          <img
+            src={IconClose}
+            alt="닫기"
+            role="button"
+            tabIndex={0}
+            className={styles.close}
+            onClick={() => removeHistory(value)}
+          />
+        </button>
       ))}
-    </ul>
+    </div>
   );
 };
 
