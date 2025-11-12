@@ -15,7 +15,7 @@ const getHistory = () => {
   return saved ? JSON.parse(saved) : [];
 };
 
-const syncHistory = (history: string[]) => {
+const syncLocalStorageHistory = (history: string[]) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
 };
 
@@ -30,15 +30,16 @@ const History = ({ selectedValue }: Props) => {
     setHistory((prev) => {
       if (prev.includes(query)) return prev;
       const newHistory = [query, ...prev].slice(0, HISTORY_LIMIT);
-      syncHistory(newHistory);
+      syncLocalStorageHistory(newHistory);
       return newHistory;
     });
   }, [searchParams]);
 
-  const removeHistory = (target: string) => {
+  const removeHistory = (target: string, isLastItem: boolean) => {
     const newHistory = history.filter((item) => item !== target);
     setHistory(newHistory);
-    syncHistory(newHistory);
+    syncLocalStorageHistory(newHistory);
+    isLastItem && selectedHistory('');
   };
 
   const selectedHistory = (value: string) => {
@@ -50,7 +51,7 @@ const History = ({ selectedValue }: Props) => {
 
   return (
     <div className={styles.container} data-history="open">
-      {history.map((value, index) => (
+      {history.map((value, index, arr) => (
         <button type="button" key={index} className="text-md" onClick={() => selectedHistory(value)}>
           {value}
           <img
@@ -59,7 +60,10 @@ const History = ({ selectedValue }: Props) => {
             role="button"
             tabIndex={0}
             className={styles.close}
-            onClick={() => removeHistory(value)}
+            onClick={(event) => {
+              event.stopPropagation();
+              removeHistory(value, arr.length === 1);
+            }}
           />
         </button>
       ))}
