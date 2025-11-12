@@ -1,5 +1,6 @@
 .container {
   position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
@@ -8,7 +9,7 @@
   margin-top: 3.2rem;
 }
 
-.box {
+.form {
   position: relative;
   height: 5rem;
   width: 100%;
@@ -17,21 +18,25 @@
   border-radius: 10rem;
   background-color: var(--color-light-gray);
 
-  img {
+  &:focus-within ul {
+    display: block;
+  }
+
+  > img {
     position: absolute;
     left: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
   }
-}
 
-.input {
-  width: 100%;
-  border: none;
-  font-size: var(--text-md);
-  color: var(--color-text-primary);
+  input {
+    width: 100%;
+    border: none;
+    font-size: var(--text-md);
+    color: var(--color-text-primary);
 
-  &::placeholder {
-    color: var(--color-text-subtitle);
+    &::placeholder {
+      color: var(--color-text-subtitle);
+    }
   }
 }

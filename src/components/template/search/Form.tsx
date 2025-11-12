@@ -1,18 +1,29 @@
 import IconSearch from '@/assets/icons/icon-search.svg';
 import Button from '@/components/element/button';
+import History from '@/components/layout/Search/History';
 import Filter from '@/components/module/Filter';
-import { useState } from 'react';
-import style from './Form.module.css';
+import { FormEvent, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styles from './Form.module.css';
 
 const Search = () => {
   const [openFilter, setOpenFilter] = useState(false);
+  const navigate = useNavigate();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate({ search: `?query=${inputRef.current?.value.trim() || ''}` });
+  };
+
   return (
-    <div className={style.container}>
-      <div className={style.box}>
-        <input type="text" placeholder="검색어를 입력하세요" className={style.input} />
+    <div className={styles.container}>
+      <form onSubmit={onSubmit} className={styles.form}>
+        <input type="text" name="search" placeholder="검색어를 입력하세요" ref={inputRef} />
         <img src={IconSearch} alt="" />
-      </div>
-      <Button variant="outline" size="sm" onClick={() => setOpenFilter((prev) => !prev)}>
+        <History />
+      </form>
+      <Button type="submit" variant="outline" size="sm" onClick={() => setOpenFilter((prev) => !prev)}>
         상세검색
       </Button>
       {openFilter && <Filter onClose={() => setOpenFilter(false)} />}
