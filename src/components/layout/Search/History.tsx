@@ -37,6 +37,8 @@ const History = () => {
     syncHistory(newHistory);
   };
 
+  if (!history.length) return null;
+
   return (
     <ul className={styles.container}>
       {history.map((item, index) => (
