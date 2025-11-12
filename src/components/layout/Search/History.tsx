@@ -1,7 +1,7 @@
 import IconClose from '@/assets/icons/icon-close.svg';
 import useSearch from '@/hooks/useSearch';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import styles from './History.module.css';
 
 const STORAGE_KEY = 'searchHistory';
@@ -21,12 +21,11 @@ const syncHistory = (history: string[]) => {
 
 const History = ({ selectedValue }: Props) => {
   const [history, setHistory] = useState<string[]>(getHistory());
-  const location = useLocation();
+  const [searchParams] = useSearchParams();
   const { updateQuery } = useSearch();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const query = params.get('query')?.trim() || '';
+    const query = searchParams.get('query') || '';
     if (!query) return;
     setHistory((prev) => {
       if (prev.includes(query)) return prev;
@@ -34,7 +33,7 @@ const History = ({ selectedValue }: Props) => {
       syncHistory(newHistory);
       return newHistory;
     });
-  }, [location.search]);
+  }, [searchParams]);
 
   const removeHistory = (target: string) => {
     const newHistory = history.filter((item) => item !== target);
