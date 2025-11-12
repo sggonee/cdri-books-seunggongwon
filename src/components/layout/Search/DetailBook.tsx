@@ -1,23 +1,17 @@
 import Button from '@/components/element/button';
 import Like from '@/components/element/button/Like';
 import Toggle from '@/components/element/button/Toggle';
+import { BookDocument } from '@/controller/books/interface';
 import clsx from 'clsx';
 import styles from './DetailBook.module.css';
 
 interface Props {
-  item: {
-    title: string;
-    publisher: string;
-    description: string;
-    price: number;
-    salePrice: number;
-    thumbnail: string;
-  };
+  item: BookDocument;
   onClose: () => void;
 }
 
 const DetailBook = ({ item, onClose }: Props) => {
-  const { title, publisher, price, salePrice, thumbnail, description } = item;
+  const { title, publisher, price, sale_price, thumbnail, contents } = item;
 
   return (
     <div className={styles.container}>
@@ -35,7 +29,7 @@ const DetailBook = ({ item, onClose }: Props) => {
         </span>
         <pre
           className={styles.description}
-          dangerouslySetInnerHTML={{ __html: description ?? '책 소개 문구가 없습니다.' }}
+          dangerouslySetInnerHTML={{ __html: contents ?? '책 소개 문구가 없습니다.' }}
         />
       </div>
       <div className={styles.purchase}>
@@ -43,7 +37,7 @@ const DetailBook = ({ item, onClose }: Props) => {
           <span className={styles.priceLabel}>원가</span>
           <strong className={clsx(styles.originPrice, 'is--discounted')}>{price?.toLocaleString()}원</strong>
           <span className={styles.priceLabel}>할인가</span>
-          <strong className={clsx(styles.salePrice, 'heading-sm')}>{salePrice?.toLocaleString()}원</strong>
+          <strong className={clsx(styles.salePrice, 'heading-sm')}>{sale_price?.toLocaleString()}원</strong>
         </div>
         <div className={styles.func}>
           <Button variant="primary" size="md">

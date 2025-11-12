@@ -1,27 +1,20 @@
 import Button from '@/components/element/button';
 import Like from '@/components/element/button/Like';
 import Toggle from '@/components/element/button/Toggle';
+import { BookDocument } from '@/controller/books/interface';
 import clsx from 'clsx';
 import styles from './Book.module.css';
 import DetailBook from './DetailBook';
 
 interface Props {
-  item: {
-    title: string;
-    publisher: string;
-    description: string;
-    price: number;
-    salePrice: number;
-    thumbnail: string;
-  };
+  item: BookDocument;
   index: number;
   isOpenDetail: boolean;
   onOpenDetail: (index: number) => void;
 }
 
 const Book = ({ item, index, isOpenDetail, onOpenDetail }: Props) => {
-  const { title, publisher, price, salePrice, thumbnail } = item;
-
+  const { title, publisher, price, sale_price, thumbnail } = item;
   if (isOpenDetail) return <DetailBook item={item} onClose={() => onOpenDetail(-1)} />;
 
   return (
@@ -34,7 +27,7 @@ const Book = ({ item, index, isOpenDetail, onOpenDetail }: Props) => {
         <strong className="heading-sm">{title}</strong>
         <b className="text-md-s">{publisher}</b>
       </div>
-      <div className={clsx(styles.price, 'heading-sm')}>{salePrice ?? price}원</div>
+      <div className={clsx(styles.price, 'heading-sm')}>{sale_price ?? price}원</div>
       <div className={styles.func}>
         <Button variant="primary" size="md">
           구매하기
