@@ -19,7 +19,7 @@ const Search = () => {
   return (
     <div className={styles.container}>
       <form onSubmit={onSubmit} className={styles.form}>
-        <input type="text" name="search" placeholder="검색어를 입력하세요" ref={inputRef} />
+        <input type="text" name="search" placeholder="검색어를 입력하세요" autoComplete="off" ref={inputRef} />
         <img src={IconSearch} alt="" />
         <History
           selectedValue={(value: string) => {
