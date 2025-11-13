@@ -14,7 +14,7 @@ interface Props {
 }
 
 const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
-  const { title, publisher, price, sale_price, thumbnail, contents, url } = item;
+  const { title, authors, price, sale_price, thumbnail, contents, url } = item;
 
   return (
     <div className={styles.container}>
@@ -25,7 +25,7 @@ const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
       <div className={styles.content}>
         <strong>
           <span className="heading-sm">{title}</span>
-          <span className="text-md-s">{publisher}</span>
+          <span className="text-md-s">{authors.join(', ')}</span>
         </strong>
         <span className="text-md-s">
           <b>책 소개</b>

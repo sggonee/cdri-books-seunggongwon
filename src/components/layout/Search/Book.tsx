@@ -17,7 +17,7 @@ interface Props {
 }
 
 const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }: Props) => {
-  const { title, publisher, price, sale_price, thumbnail, url } = item;
+  const { title, authors, price, sale_price, thumbnail, url } = item;
 
   if (isOpenDetail) {
     return <DetailBook item={item} isLiked={isLiked} onToggleLike={onToggleLike} onClose={() => onOpenDetail(-1)} />;
@@ -31,7 +31,7 @@ const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }
       </div>
       <div className={styles.meta}>
         <strong className="heading-sm">{title}</strong>
-        <b className="text-md-s">{publisher}</b>
+        <b className="text-md-s">{authors.join(', ')}</b>
       </div>
       <div className={clsx(styles.price, 'heading-sm')}>{(sale_price ?? price).toLocaleString()}원</div>
       <div className={styles.func}>
