@@ -24,10 +24,10 @@ const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
       </div>
       <div className={styles.content}>
         <strong>
-          <span className="heading-sm">{title}</span>
-          <span className="text-md-s">{authors.join(', ')}</span>
+          <span className="text-h3">{title}</span>
+          <span className="text-p3">{authors.join(', ')}</span>
         </strong>
-        <span className="text-md-s">
+        <span className="text-p3">
           <b>책 소개</b>
         </span>
         <pre
@@ -48,7 +48,7 @@ const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
           {!!sale_price && (
             <>
               <span className={styles.priceLabel}>할인가</span>
-              <strong className={clsx(styles.salePrice, 'heading-sm')}>{sale_price?.toLocaleString()}원</strong>
+              <strong className={clsx(styles.salePrice, 'text-h3')}>{sale_price?.toLocaleString()}원</strong>
             </>
           )}
         </div>

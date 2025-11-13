@@ -36,11 +36,11 @@
 }
 
 .md {
-  font-size: var(--text-md);
+  font-size: var(--text-p2);
   padding: 1.6rem 2.8rem;
 }
 
 .lg {
-  font-size: var(--text-lg);
+  font-size: var(--text-p1);
   padding: 1.6rem 2.8rem;
 }

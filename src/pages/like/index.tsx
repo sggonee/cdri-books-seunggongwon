@@ -19,7 +19,7 @@ const Like = () => {
   const totalCount = books.length;
   return (
     <section className="like-section">
-      <h2 className="heading-md">내가 찜한 책</h2>
+      <h2 className="text-h2">내가 찜한 책</h2>
       <Summary content="찜한 책" count={totalCount} />
       {totalCount ? <Books items={books} /> : <SearchNotFound />}
     </section>

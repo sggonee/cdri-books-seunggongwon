@@ -30,10 +30,10 @@ const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }
         <Like className={styles.like} active={isLiked} onClick={() => onToggleLike(item.title, item.isbn)} />
       </div>
       <div className={styles.meta}>
-        <strong className="heading-sm">{title}</strong>
-        <b className="text-md-s">{authors.join(', ')}</b>
+        <strong className="text-h3">{title}</strong>
+        <b className="text-p3">{authors.join(', ')}</b>
       </div>
-      <div className={clsx(styles.price, 'heading-sm')}>{(sale_price ?? price).toLocaleString()}원</div>
+      <div className={clsx(styles.price, 'text-h3')}>{(sale_price ?? price).toLocaleString()}원</div>
       <div className={styles.func}>
         <Link to={url} target="_blank" variant="primary" size="md">
           구매하기

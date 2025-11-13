@@ -34,7 +34,7 @@
   input {
     width: 100%;
     border: none;
-    font-size: var(--text-md);
+    font-size: var(--text-p2);
     color: var(--color-text-subtitle);
 
     &::placeholder {

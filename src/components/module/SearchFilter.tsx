@@ -6,7 +6,7 @@ import useSearch from '@/hooks/useSearch';
 import clsx from 'clsx';
 import { FormEvent, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import styles from './Filter.module.css';
+import styles from './SearchFilter.module.css';
 
 interface Props {
   onClose: () => void;
@@ -38,7 +38,7 @@ const SearchFilter = ({ selectedValue, onClose }: Props) => {
           <div className={styles.selector}>
             <button
               type="button"
-              className={clsx(styles.selectorBtn, 'text-md-s')}
+              className={clsx(styles.selectorBtn, 'text-p3')}
               onClick={() => setOpen((prev) => !prev)}
             >
               {FILTER_OPTIONS.find((opt) => opt.key === selected)!.label}
@@ -50,7 +50,7 @@ const SearchFilter = ({ selectedValue, onClose }: Props) => {
                   <button
                     key={opt.key}
                     type="button"
-                    className="text-md-s"
+                    className="text-p3"
                     onClick={() => {
                       setSelected(opt.key);
                       setOpen(false);
@@ -68,7 +68,7 @@ const SearchFilter = ({ selectedValue, onClose }: Props) => {
               type="text"
               name="search"
               placeholder="검색어 입력"
-              className="text-md-s"
+              className="text-p3"
               defaultValue={isDetailFiltered ? query : ''}
               ref={inputRef}
             />

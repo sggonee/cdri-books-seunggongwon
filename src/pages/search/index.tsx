@@ -19,8 +19,8 @@ import { useSearchParams } from 'react-router-dom';
  * [x] 내가 찜한 도서 UI
  * [x] 글로벌 네비게이션
  * [] heading 컴포넌트 분리
- * [] 스타일 변수 정리
- * [] 컴포넌트 이름 & 구조 정리
+ * [x] 스타일 변수 정리
+ * [x] 컴포넌트 이름 & 구조 정리
  * [] 아이콘 정리
  */
 
@@ -32,7 +32,7 @@ const Search = () => {
 
   return (
     <section className="search-section">
-      <h2 className="heading-md">도서 검색</h2>
+      <h2 className="text-h2">도서 검색</h2>
       <SearchForm />
       <Summary content="도서 검색 결과" count={totalCount} />
       {totalCount ? <Books items={books} /> : <SearchNotFound />}

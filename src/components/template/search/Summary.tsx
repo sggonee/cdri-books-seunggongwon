@@ -8,7 +8,7 @@ interface Props {
 
 const Summary = ({ content, count }: Props) => {
   return (
-    <p className={clsx(styles.container, 'text-md')}>
+    <p className={clsx(styles.container, 'text-p2')}>
       {content} 총 <span>{count}</span>건
     </p>
   );

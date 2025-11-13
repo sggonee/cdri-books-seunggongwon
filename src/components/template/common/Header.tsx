@@ -16,13 +16,13 @@ const routes = [
 const Header = () => {
   return (
     <header className={clsx(styles.container)}>
-      <h1 className={clsx(styles.logo, 'heading-lg')}>CERTICOS BOOKS</h1>
+      <h1 className={clsx(styles.logo, 'text-h1')}>CERTICOS BOOKS</h1>
       <nav className={styles.nav}>
         {routes.map((route) => (
           <NavLink
             key={route.to}
             to={route.to}
-            className={({ isActive }) => clsx('text-lg', isActive && styles['is--active'])}
+            className={({ isActive }) => clsx('text-p1', isActive && styles['is--active'])}
           >
             {route.label}
           </NavLink>

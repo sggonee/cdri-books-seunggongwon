@@ -5,7 +5,7 @@ const SearchNotFound = () => {
   return (
     <div className={styles.container}>
       <img src={IconBook} alt="" />
-      <p className="text-md">검색 결과가 없습니다.</p>
+      <p className="text-p2">검색 결과가 없습니다.</p>
     </div>
   );
 };

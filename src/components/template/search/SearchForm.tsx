@@ -5,7 +5,7 @@ import SearchFilter from '@/components/module/SearchFilter';
 import useSearch from '@/hooks/useSearch';
 import { FormEvent, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import styles from './Form.module.css';
+import styles from './SearchForm.module.css';
 
 /**
  * 조건

@@ -52,7 +52,7 @@ const History = ({ selectedValue }: Props) => {
   return (
     <div className={styles.container} data-history="open">
       {history.map((value, index, arr) => (
-        <button type="button" key={index} className="text-md" onClick={() => selectedHistory(value)}>
+        <button type="button" key={index} className="text-p2" onClick={() => selectedHistory(value)}>
           {value}
           <img
             src={IconClose}
