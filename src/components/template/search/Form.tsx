@@ -1,7 +1,7 @@
 import IconSearch from '@/assets/icons/icon-search.svg';
 import Button from '@/components/element/button/Button';
 import History from '@/components/layout/search/History';
-import Filter from '@/components/module/Filter';
+import SearchFilter from '@/components/module/SearchFilter';
 import useSearch from '@/hooks/useSearch';
 import { FormEvent, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -50,7 +50,7 @@ const Search = () => {
         상세검색
       </Button>
       {openFilter && (
-        <Filter
+        <SearchFilter
           selectedValue={(value: string) => {
             inputRef.current!.value = value;
           }}

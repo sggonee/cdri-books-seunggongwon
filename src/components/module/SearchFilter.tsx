@@ -13,7 +13,7 @@ interface Props {
   selectedValue: (value: string) => void;
 }
 
-const Filter = ({ selectedValue, onClose }: Props) => {
+const SearchFilter = ({ selectedValue, onClose }: Props) => {
   const { updateQuery } = useSearch();
   const [searchParams] = useSearchParams();
   const [selected, setSelected] = useState(searchParams.get('target') || 'title');
@@ -85,4 +85,4 @@ const Filter = ({ selectedValue, onClose }: Props) => {
   );
 };
 
-export default Filter;
+export default SearchFilter;
