@@ -1,5 +1,5 @@
 import IconSearch from '@/assets/icons/icon-search.svg';
-import Button from '@/components/element/button';
+import Button from '@/components/element/button/Button';
 import History from '@/components/layout/Search/History';
 import Filter from '@/components/module/Filter';
 import useSearch from '@/hooks/useSearch';

@@ -1,6 +1,6 @@
 import IconArrow from '@/assets/icons/icon-arrow.svg';
 import IconClose from '@/assets/icons/icon-close.svg';
-import Button from '@/components/element/button';
+import Button from '@/components/element/button/Button';
 import { FILTER_OPTIONS } from '@/constant/filter';
 import useSearch from '@/hooks/useSearch';
 import clsx from 'clsx';

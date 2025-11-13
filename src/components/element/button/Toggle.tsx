@@ -1,7 +1,7 @@
 import IconArrow from '@/assets/icons/icon-arrow.svg';
 import clsx from 'clsx';
 import { ButtonHTMLAttributes } from 'react';
-import Button from '.';
+import Button from './Button';
 import styles from './Toggle.module.css';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
