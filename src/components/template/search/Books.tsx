@@ -34,7 +34,7 @@ const Books = ({ items }: { items: BookDocument[] }) => {
     <div className={styles.container}>
       {items.map((item, i) => (
         <Book
-          key={item.isbn}
+          key={`${item.isbn}-${i}`}
           index={i}
           item={item}
           isLiked={!!likeHistory[item.isbn]}
