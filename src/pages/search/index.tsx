@@ -15,7 +15,8 @@ import { useSearchParams } from 'react-router-dom';
  * [x] Not found
  * [x] 상세 검색 필터
  * [x] 무한 스크롤
- * [] 찜하기
+ * [x] 찜하기
+ * [] 내가 찜한 도서 UI
  * [] heading 컴포넌트 분리
  * [] 스타일 변수 정리
  * [] 컴포넌트 이름 & 구조 정리
