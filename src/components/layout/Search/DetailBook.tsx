@@ -1,6 +1,7 @@
+import Button from '@/components/element/button/Button';
 import Like from '@/components/element/button/Like';
 import Link from '@/components/element/button/Link';
-import Toggle from '@/components/element/button/Toggle';
+import Icon from '@/components/element/Icon';
 import { PlaceholderImage } from '@/constant/placeholder';
 import { BookDocument } from '@/controller/books/interface';
 import clsx from 'clsx';
@@ -56,9 +57,9 @@ const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
           <Link to={url} target="_blank" variant="primary" size="md">
             구매하기
           </Link>
-          <Toggle variant="ghost" size="md" onClick={onClose} active>
-            상세보기
-          </Toggle>
+          <Button variant="ghost" size="md" onClick={onClose}>
+            상세보기 <Icon name="arrow" />
+          </Button>
         </div>
       </div>
     </div>

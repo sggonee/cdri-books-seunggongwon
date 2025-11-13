@@ -91,5 +91,9 @@
     position: absolute;
     top: 0.4rem;
     right: 0;
+
+    img {
+      transform: rotate(180deg);
+    }
   }
 }
