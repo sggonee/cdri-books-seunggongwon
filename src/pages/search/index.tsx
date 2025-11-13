@@ -17,10 +17,10 @@ import { useSearchParams } from 'react-router-dom';
  * [x] 무한 스크롤
  * [x] 찜하기
  * [x] 내가 찜한 도서 UI
+ * [x] 글로벌 네비게이션
  * [] heading 컴포넌트 분리
  * [] 스타일 변수 정리
  * [] 컴포넌트 이름 & 구조 정리
- * [] 글로벌 네비게이션
  * [] 아이콘 정리
  */
 
