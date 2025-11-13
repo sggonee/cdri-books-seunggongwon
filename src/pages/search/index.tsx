@@ -1,6 +1,6 @@
 import Books from '@/components/template/search/Books';
-import Form from '@/components/template/search/Form';
 import SearchNotFound from '@/components/template/search/NotFound';
+import SearchForm from '@/components/template/search/SearchForm';
 import Summary from '@/components/template/search/Summary';
 import { useInfiniteBooks } from '@/controller/books/query';
 import { useSearchParams } from 'react-router-dom';
@@ -33,7 +33,7 @@ const Search = () => {
   return (
     <section className="search-section">
       <h2 className="heading-md">도서 검색</h2>
-      <Form />
+      <SearchForm />
       <Summary content="도서 검색 결과" count={totalCount} />
       {totalCount ? <Books items={books} /> : <SearchNotFound />}
       <div ref={targetRef} />

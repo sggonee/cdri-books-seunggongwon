@@ -16,7 +16,7 @@ import styles from './Form.module.css';
  * [x] 검색어 유지
  */
 
-const Search = () => {
+const SearchForm = () => {
   const [searchParams] = useSearchParams();
   const { updateQuery } = useSearch();
   const [openFilter, setOpenFilter] = useState(false);
@@ -61,4 +61,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchForm;
