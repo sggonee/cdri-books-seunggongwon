@@ -1,5 +1,5 @@
-import Button from '@/components/element/button';
 import Like from '@/components/element/button/Like';
+import Link from '@/components/element/button/Link';
 import Toggle from '@/components/element/button/Toggle';
 import { PlaceholderImage } from '@/constant/placeholder';
 import { BookDocument } from '@/controller/books/interface';
@@ -31,9 +31,9 @@ const Book = ({ item, index, isOpenDetail, onOpenDetail }: Props) => {
       </div>
       <div className={clsx(styles.price, 'heading-sm')}>{(sale_price ?? price).toLocaleString()}원</div>
       <div className={styles.func}>
-        <Button variant="primary" size="md" onClick={() => window.open(url, '_blank')}>
+        <Link to={url} target="_blank" variant="primary" size="md">
           구매하기
-        </Button>
+        </Link>
         <Toggle variant="ghost" size="md" onClick={() => onOpenDetail(index)}>
           상세보기
         </Toggle>

@@ -81,19 +81,15 @@
 }
 
 .func {
+  a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
   button {
     position: absolute;
-
-    &:first-child {
-      left: 0;
-      bottom: 0;
-      max-width: 100%;
-      width: 100%;
-    }
-
-    &:last-child {
-      top: 0.4rem;
-      right: 0;
-    }
+    top: 0.4rem;
+    right: 0;
   }
 }
