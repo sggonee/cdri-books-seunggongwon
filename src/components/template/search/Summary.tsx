@@ -2,13 +2,14 @@ import clsx from 'clsx';
 import styles from './Summary.module.css';
 
 interface Props {
+  content: string;
   count: number;
 }
 
-const Summary = ({ count }: Props) => {
+const Summary = ({ content, count }: Props) => {
   return (
     <p className={clsx(styles.container, 'text-md')}>
-      도서 검색 결과 총 <span>{count}</span>건
+      {content} 총 <span>{count}</span>건
     </p>
   );
 };

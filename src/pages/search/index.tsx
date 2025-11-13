@@ -34,7 +34,7 @@ const Search = () => {
     <section className="search-section">
       <h2 className="heading-md">도서 검색</h2>
       <Form />
-      <Summary count={totalCount} />
+      <Summary content="도서 검색 결과" count={totalCount} />
       {totalCount ? <Books items={books} /> : <SearchNotFound />}
       <div ref={targetRef} />
     </section>

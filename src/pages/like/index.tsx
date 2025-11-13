@@ -20,7 +20,7 @@ const Like = () => {
   return (
     <section className="like-section">
       <h2 className="heading-md">내가 찜한 책</h2>
-      <Summary count={totalCount} />
+      <Summary content="찜한 책" count={totalCount} />
       {totalCount ? <Books items={books} /> : <SearchNotFound />}
     </section>
   );
