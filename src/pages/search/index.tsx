@@ -16,7 +16,7 @@ import { useSearchParams } from 'react-router-dom';
  * [x] 상세 검색 필터
  * [x] 무한 스크롤
  * [x] 찜하기
- * [] 내가 찜한 도서 UI
+ * [x] 내가 찜한 도서 UI
  * [] heading 컴포넌트 분리
  * [] 스타일 변수 정리
  * [] 컴포넌트 이름 & 구조 정리
@@ -31,7 +31,7 @@ const Search = () => {
   const totalCount = data?.meta?.total_count ?? 0;
 
   return (
-    <section>
+    <section className="search-section">
       <h2 className="heading-md">도서 검색</h2>
       <Form />
       <Summary count={totalCount} />

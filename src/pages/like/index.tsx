@@ -1,5 +1,29 @@
+import Books from '@/components/template/search/Books';
+import SearchNotFound from '@/components/template/search/NotFound';
+import Summary from '@/components/template/search/Summary';
+import { useLikeBooks } from '@/controller/books/query';
+import { getLikeHistory } from '@/utils/like';
+import { useState } from 'react';
+
+const getLikeBookCode = () => {
+  return Object.entries(getLikeHistory()).map(([code]) => {
+    const [isbn] = code.split(' ');
+    return isbn;
+  });
+};
+
 const Like = () => {
-  return <div>Like page</div>;
+  const [likes] = useState(getLikeBookCode());
+  const data = useLikeBooks(likes);
+  const books = data.flatMap((item) => item.data?.documents ?? []);
+  const totalCount = books.length;
+  return (
+    <section className="like-section">
+      <h2 className="heading-md">내가 찜한 책</h2>
+      <Summary count={totalCount} />
+      {totalCount ? <Books items={books} /> : <SearchNotFound />}
+    </section>
+  );
 };
 
 export default Like;

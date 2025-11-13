@@ -1,6 +1,17 @@
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { getBooks } from './api';
+import { useInfiniteQuery, useQueries } from '@tanstack/react-query';
+import { getBook, getBooks } from './api';
+
+export const useLikeBooks = (likes: string[]) => {
+  return useQueries({
+    queries: likes.map((code) => {
+      return {
+        queryKey: ['like', code],
+        queryFn: () => getBook(code),
+      };
+    }),
+  });
+};
 
 export const useInfiniteBooks = (query: string) => {
   const { data, isFetchingNextPage, hasNextPage, fetchNextPage } = useInfiniteQuery({
