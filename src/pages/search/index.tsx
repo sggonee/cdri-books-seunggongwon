@@ -2,7 +2,7 @@ import Books from '@/components/template/search/Books';
 import Form from '@/components/template/search/Form';
 import SearchNotFound from '@/components/template/search/NotFound';
 import Summary from '@/components/template/search/Summary';
-import { useBooks } from '@/controller/books/query';
+import { useInfiniteBooks } from '@/controller/books/query';
 import { useSearchParams } from 'react-router-dom';
 
 /**
@@ -14,7 +14,7 @@ import { useSearchParams } from 'react-router-dom';
  * [x] 검색 히스토리
  * [x] Not found
  * [x] 상세 검색 필터
- * [] 무한 스크롤
+ * [x] 무한 스크롤
  * [] 찜하기
  * [] heading 컴포넌트 분리
  * [] 스타일 변수 정리
@@ -25,8 +25,8 @@ import { useSearchParams } from 'react-router-dom';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
-  const { data } = useBooks(searchParams.toString());
-  const books = data?.documents ?? [];
+  const { data, targetRef } = useInfiniteBooks(searchParams.toString());
+  const books = data?.pages ?? [];
   const totalCount = data?.meta?.total_count ?? 0;
 
   return (
@@ -35,6 +35,7 @@ const Search = () => {
       <Form />
       <Summary count={totalCount} />
       {totalCount ? <Books items={books} /> : <SearchNotFound />}
+      <div ref={targetRef} />
     </section>
   );
 };
