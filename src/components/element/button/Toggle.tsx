@@ -1,4 +1,4 @@
-import IconArrow from '@/assets/icons/icon-arrow.svg';
+import Icon from '@/components/element/Icon';
 import clsx from 'clsx';
 import { ButtonHTMLAttributes } from 'react';
 import Button from './Button';
@@ -18,7 +18,7 @@ const Toggle = ({ children, className, active = false, ...props }: Props) => {
       })}
       {...props}
     >
-      {children} <img src={IconArrow} alt="" />
+      {children} <Icon name="arrow" />
     </Button>
   );
 };

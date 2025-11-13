@@ -1,5 +1,5 @@
-import IconSearch from '@/assets/icons/icon-search.svg';
 import Button from '@/components/element/button/Button';
+import Icon from '@/components/element/Icon';
 import History from '@/components/layout/search/History';
 import SearchFilter from '@/components/module/SearchFilter';
 import useSearch from '@/hooks/useSearch';
@@ -39,7 +39,7 @@ const SearchForm = () => {
           defaultValue={searchParams.get('query') || ''}
           ref={inputRef}
         />
-        <img src={IconSearch} alt="" />
+        <Icon name="search" />
         <History
           selectedValue={(value: string) => {
             inputRef.current!.value = value;

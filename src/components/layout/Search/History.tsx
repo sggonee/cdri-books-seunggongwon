@@ -1,4 +1,4 @@
-import IconClose from '@/assets/icons/icon-close.svg';
+import Icon from '@/components/element/Icon';
 import useSearch from '@/hooks/useSearch';
 import { StorageKey } from '@/utils/storage';
 import { useEffect, useState } from 'react';
@@ -54,11 +54,8 @@ const History = ({ selectedValue }: Props) => {
       {history.map((value, index, arr) => (
         <button type="button" key={index} className="text-p2" onClick={() => selectedHistory(value)}>
           {value}
-          <img
-            src={IconClose}
-            alt="닫기"
-            role="button"
-            tabIndex={0}
+          <Icon
+            name="close"
             className={styles.close}
             onClick={(event) => {
               event.stopPropagation();

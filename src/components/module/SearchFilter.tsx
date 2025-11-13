@@ -1,11 +1,10 @@
-import IconArrow from '@/assets/icons/icon-arrow.svg';
-import IconClose from '@/assets/icons/icon-close.svg';
 import Button from '@/components/element/button/Button';
 import { FILTER_OPTIONS } from '@/constant/filter';
 import useSearch from '@/hooks/useSearch';
 import clsx from 'clsx';
 import { FormEvent, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import Icon from '../element/Icon';
 import styles from './SearchFilter.module.css';
 
 interface Props {
@@ -42,7 +41,7 @@ const SearchFilter = ({ selectedValue, onClose }: Props) => {
               onClick={() => setOpen((prev) => !prev)}
             >
               {FILTER_OPTIONS.find((opt) => opt.key === selected)!.label}
-              <img src={IconArrow} alt="" />
+              <Icon name="arrow" />
             </button>
             {open && (
               <div className={styles.options}>
@@ -79,7 +78,7 @@ const SearchFilter = ({ selectedValue, onClose }: Props) => {
         </div>
       </form>
       <button type="button" className={styles.close} onClick={onClose}>
-        <img src={IconClose} alt="닫기" />
+        <Icon name="close" />
       </button>
     </div>
   );

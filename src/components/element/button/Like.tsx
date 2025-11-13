@@ -1,5 +1,4 @@
-import IconFillLike from '@/assets/icons/icon-fill-like.svg';
-import IconLike from '@/assets/icons/icon-like.svg';
+import Icon from '@/components/element/Icon';
 import { ButtonHTMLAttributes } from 'react';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,7 +9,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Like = ({ active = false, className, ...props }: Props) => {
   return (
     <button type="button" {...props}>
-      <img src={active ? IconFillLike : IconLike} alt="좋아요" className={className} />
+      <Icon name={active ? 'fill-like' : 'like'} className={className} />
     </button>
   );
 };
