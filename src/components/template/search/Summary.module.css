@@ -1,6 +1,4 @@
 .container {
-  margin-top: var(--spacing-lg);
-
   span {
     color: var(--color-primary);
   }

@@ -1,12 +1,18 @@
 .container {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
+  padding: 3.2rem 0 2.4rem;
+  background-color: var(--color-white);
+}
+
+.innerLayout {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  position: relative;
   max-width: 56.8rem;
   border-radius: 3rem;
-  margin-top: 3.2rem;
 }
 
 .form {
