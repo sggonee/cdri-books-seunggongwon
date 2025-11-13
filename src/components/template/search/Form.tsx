@@ -29,35 +29,33 @@ const Search = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.innerLayout}>
-        <form onSubmit={onSubmit} className={styles.form}>
-          <input
-            type="text"
-            name="search"
-            placeholder="검색어를 입력하세요"
-            autoComplete="off"
-            defaultValue={searchParams.get('query') || ''}
-            ref={inputRef}
-          />
-          <img src={IconSearch} alt="" />
-          <History
-            selectedValue={(value: string) => {
-              inputRef.current!.value = value;
-            }}
-          />
-        </form>
-        <Button type="submit" variant="outline" size="sm" onClick={() => setOpenFilter((prev) => !prev)}>
-          상세검색
-        </Button>
-        {openFilter && (
-          <Filter
-            selectedValue={(value: string) => {
-              inputRef.current!.value = value;
-            }}
-            onClose={() => setOpenFilter(false)}
-          />
-        )}
-      </div>
+      <form onSubmit={onSubmit} className={styles.form}>
+        <input
+          type="text"
+          name="search"
+          placeholder="검색어를 입력하세요"
+          autoComplete="off"
+          defaultValue={searchParams.get('query') || ''}
+          ref={inputRef}
+        />
+        <img src={IconSearch} alt="" />
+        <History
+          selectedValue={(value: string) => {
+            inputRef.current!.value = value;
+          }}
+        />
+      </form>
+      <Button type="submit" variant="outline" size="sm" onClick={() => setOpenFilter((prev) => !prev)}>
+        상세검색
+      </Button>
+      {openFilter && (
+        <Filter
+          selectedValue={(value: string) => {
+            inputRef.current!.value = value;
+          }}
+          onClose={() => setOpenFilter(false)}
+        />
+      )}
     </div>
   );
 };

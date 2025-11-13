@@ -1,8 +1,7 @@
 .container {
+  margin-top: 2.4rem;
+
   span {
     color: var(--color-primary);
-  }
-  :global(.like-section) & {
-    padding-top: 3.2rem;
   }
 }
