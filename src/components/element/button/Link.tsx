@@ -14,10 +14,10 @@ const Link = ({
   size = 'md',
   className,
   children,
-  ...rest
+  ...props
 }: PropsWithChildren<Props>) => {
   return (
-    <NavLink to={to} className={clsx(style.button, style[variant], style[size], className)} {...rest}>
+    <NavLink to={to} className={clsx(style.button, style[variant], style[size], className)} {...props}>
       {children}
     </NavLink>
   );

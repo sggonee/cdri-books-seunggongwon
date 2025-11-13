@@ -7,9 +7,9 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const Button = ({ variant = 'primary', size = 'md', className, children, ...rest }: Props) => {
+const Button = ({ variant = 'primary', size = 'md', className, children, ...props }: Props) => {
   return (
-    <button className={clsx(style.button, style[variant], style[size], className)} {...rest}>
+    <button className={clsx(style.button, style[variant], style[size], className)} {...props}>
       {children}
     </button>
   );
