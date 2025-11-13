@@ -9,7 +9,7 @@ export const useInfiniteBooks = (query: string) => {
     queryFn: ({ pageParam }) => getBooks(query, pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
-      if (lastPage?.meta?.is_end) return;
+      if (lastPage?.meta?.is_end || !lastPage?.meta?.total_count) return;
       return allPages.length + 1;
     },
     select: (data) => ({
