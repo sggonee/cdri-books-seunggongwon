@@ -26,7 +26,7 @@ import { useSearchParams } from 'react-router-dom';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
-  const { data, targetRef } = useInfiniteBooks(searchParams.toString());
+  const { data, targetRef } = useInfiniteBooks(searchParams.toString(), !!searchParams.get('query'));
   const books = data?.pages ?? [];
   const totalCount = data?.meta?.total_count ?? 0;
 

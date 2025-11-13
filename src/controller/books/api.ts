@@ -14,12 +14,9 @@ export const getBook = async (value: string): Promise<{ documents: BookDocument[
 };
 
 export const getBooks = async (
-  value: string,
+  query: string,
   offset: number,
 ): Promise<{ documents: BookDocument[]; meta: BookMeta }> => {
-  const query = new URLSearchParams(value);
-  query.set('page', `${offset}`);
-  query.set('size', '10');
-  const result = await fetch(`https://dapi.kakao.com/v3/search/book?${query.toString()}`, fetchOptions);
+  const result = await fetch(`https://dapi.kakao.com/v3/search/book?${query}&size=10&page=${offset}`, fetchOptions);
   return await result.json();
 };

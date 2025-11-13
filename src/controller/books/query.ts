@@ -13,10 +13,10 @@ export const useLikeBooks = (likes: string[]) => {
   });
 };
 
-export const useInfiniteBooks = (query: string) => {
+export const useInfiniteBooks = (query: string, enabled: boolean) => {
   const { data, isFetchingNextPage, hasNextPage, fetchNextPage } = useInfiniteQuery({
     queryKey: ['books', 'infinite', query],
-    enabled: !!query,
+    enabled,
     queryFn: ({ pageParam }) => getBooks(query, pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
