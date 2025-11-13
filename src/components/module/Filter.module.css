@@ -1,14 +1,14 @@
 .container {
   position: absolute;
-  right: 50%;
+  right: 0;
   top: 0;
   width: 36rem;
-  padding: 3.6rem 2.4rem;
+  padding: 4rem 2.4rem;
   box-sizing: border-box;
   border-radius: 8px;
   background-color: var(--color-white);
   box-shadow: 0px 4px 14px 6px #97979726;
-  transform: translate(120%, 6rem);
+  transform: translate(35%, 40%);
 }
 
 .form {
