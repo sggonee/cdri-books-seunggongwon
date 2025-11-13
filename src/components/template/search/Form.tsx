@@ -31,6 +31,7 @@ const Search = () => {
     <div className={styles.container}>
       <form onSubmit={onSubmit} className={styles.form}>
         <input
+          required
           type="text"
           name="search"
           placeholder="검색어를 입력하세요"
