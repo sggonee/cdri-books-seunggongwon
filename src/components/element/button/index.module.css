@@ -2,11 +2,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.8rem;
-  padding: 1rem;
   width: 11.6rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
   text-wrap: nowrap;
   line-height: 1;
+
   transition:
     background-color 0.2s,
     color 0.2s;
