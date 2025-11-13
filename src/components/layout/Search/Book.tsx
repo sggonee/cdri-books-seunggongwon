@@ -13,19 +13,21 @@ interface Props {
   isLiked: boolean;
   isOpenDetail: boolean;
   onOpenDetail: (index: number) => void;
-  toggleLike: (title: string, code: string) => void;
+  onToggleLike: (title: string, code: string) => void;
 }
 
-const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, toggleLike }: Props) => {
+const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }: Props) => {
   const { title, publisher, price, sale_price, thumbnail, url } = item;
 
-  if (isOpenDetail) return <DetailBook item={item} onClose={() => onOpenDetail(-1)} />;
+  if (isOpenDetail) {
+    return <DetailBook item={item} isLiked={isLiked} onToggleLike={onToggleLike} onClose={() => onOpenDetail(-1)} />;
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.thumb}>
         <img src={thumbnail || PlaceholderImage} alt="" />
-        <Like className={styles.like} active={isLiked} onClick={() => toggleLike(item.title, item.isbn)} />
+        <Like className={styles.like} active={isLiked} onClick={() => onToggleLike(item.title, item.isbn)} />
       </div>
       <div className={styles.meta}>
         <strong className="heading-sm">{title}</strong>

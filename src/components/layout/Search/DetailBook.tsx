@@ -8,17 +8,19 @@ import styles from './DetailBook.module.css';
 
 interface Props {
   item: BookDocument;
+  isLiked: boolean;
   onClose: () => void;
+  onToggleLike: (title: string, code: string) => void;
 }
 
-const DetailBook = ({ item, onClose }: Props) => {
+const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
   const { title, publisher, price, sale_price, thumbnail, contents, url } = item;
 
   return (
     <div className={styles.container}>
       <div className={styles.thumb}>
         <img src={thumbnail || PlaceholderImage} alt="" />
-        <Like className={styles.like} active={false} />
+        <Like className={styles.like} active={isLiked} onClick={() => onToggleLike(item.title, item.isbn)} />
       </div>
       <div className={styles.content}>
         <strong>

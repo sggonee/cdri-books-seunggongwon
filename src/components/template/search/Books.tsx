@@ -9,7 +9,7 @@ const Books = ({ items }: { items: BookDocument[] }) => {
   const [openDetail, setOpenDetail] = useState(-1);
   const [likeHistory, setLikeHistory] = useState(getLikeHistory());
 
-  const toggleLike = (title: string, code: string) => {
+  const onToggleLike = (title: string, code: string) => {
     const likes = getLikeHistory();
     const exists = likes[code];
 
@@ -33,7 +33,7 @@ const Books = ({ items }: { items: BookDocument[] }) => {
           isLiked={!!likeHistory[item.isbn]}
           isOpenDetail={openDetail === i}
           onOpenDetail={(index: number) => setOpenDetail(index)}
-          toggleLike={toggleLike}
+          onToggleLike={onToggleLike}
         />
       ))}
     </div>
