@@ -1,4 +1,4 @@
-import Book from '@/components/layout/Search/Book';
+import Book from '@/components/layout/search/Book';
 import { BookDocument } from '@/controller/books/interface';
 import { getLikeHistory } from '@/utils/like';
 import { setLocalStorageItem, StorageKey } from '@/utils/storage';

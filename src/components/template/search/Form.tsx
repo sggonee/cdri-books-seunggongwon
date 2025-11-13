@@ -1,6 +1,6 @@
 import IconSearch from '@/assets/icons/icon-search.svg';
 import Button from '@/components/element/button/Button';
-import History from '@/components/layout/Search/History';
+import History from '@/components/layout/search/History';
 import Filter from '@/components/module/Filter';
 import useSearch from '@/hooks/useSearch';
 import { FormEvent, useRef, useState } from 'react';
