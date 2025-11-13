@@ -44,7 +44,7 @@ const History = ({ selectedValue }: Props) => {
 
   const selectedHistory = (value: string) => {
     selectedValue(value);
-    updateQuery(value);
+    updateQuery({ query: value });
   };
 
   if (!history.length) return null;

@@ -25,8 +25,7 @@ import { useSearchParams } from 'react-router-dom';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
-  const { data } = useBooks(query ?? '');
+  const { data } = useBooks(searchParams.toString());
   const books = data?.documents ?? [];
   const totalCount = data?.meta?.total_count ?? 0;
 
