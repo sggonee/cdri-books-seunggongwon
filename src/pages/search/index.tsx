@@ -13,7 +13,7 @@ import { useSearchParams } from 'react-router-dom';
  * [x] total count UI
  * [x] 검색 히스토리
  * [x] Not found
- * [] 상세 검색 필터
+ * [x] 상세 검색 필터
  * [] 무한 스크롤
  * [] 찜하기
  * [] heading 컴포넌트 분리

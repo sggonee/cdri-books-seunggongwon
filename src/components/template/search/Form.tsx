@@ -4,22 +4,40 @@ import History from '@/components/layout/Search/History';
 import Filter from '@/components/module/Filter';
 import useSearch from '@/hooks/useSearch';
 import { FormEvent, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import styles from './Form.module.css';
 
+/**
+ * 조건
+ *
+ * [x] 검색시 팝업은 닫힌다
+ * [x] 기존 검색어는 초기화 한다
+ * [x] 상세 검색 도중 전체 검색하면 상세 검색은 초기화
+ * [x] 검색어 유지
+ */
+
 const Search = () => {
+  const [searchParams] = useSearchParams();
   const { updateQuery } = useSearch();
   const [openFilter, setOpenFilter] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    updateQuery(inputRef.current?.value.trim() || '');
+    updateQuery({ query: inputRef.current?.value.trim() || '' });
   };
 
   return (
     <div className={styles.container}>
       <form onSubmit={onSubmit} className={styles.form}>
-        <input type="text" name="search" placeholder="검색어를 입력하세요" autoComplete="off" ref={inputRef} />
+        <input
+          type="text"
+          name="search"
+          placeholder="검색어를 입력하세요"
+          autoComplete="off"
+          defaultValue={searchParams.get('query') || ''}
+          ref={inputRef}
+        />
         <img src={IconSearch} alt="" />
         <History
           selectedValue={(value: string) => {
@@ -30,7 +48,14 @@ const Search = () => {
       <Button type="submit" variant="outline" size="sm" onClick={() => setOpenFilter((prev) => !prev)}>
         상세검색
       </Button>
-      {openFilter && <Filter onClose={() => setOpenFilter(false)} />}
+      {openFilter && (
+        <Filter
+          selectedValue={(value: string) => {
+            inputRef.current!.value = value;
+          }}
+          onClose={() => setOpenFilter(false)}
+        />
+      )}
     </div>
   );
 };
