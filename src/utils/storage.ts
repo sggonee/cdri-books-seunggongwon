@@ -1,5 +1,6 @@
 export const StorageKey = {
   Like: 'book:like',
+  SearchHistory: 'book:search-history',
 };
 
 export const getLocalStorageItem = (key: string) => window.localStorage.getItem(key);

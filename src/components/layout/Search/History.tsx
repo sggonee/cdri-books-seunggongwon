@@ -1,22 +1,22 @@
 import IconClose from '@/assets/icons/icon-close.svg';
 import useSearch from '@/hooks/useSearch';
+import { StorageKey } from '@/utils/storage';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styles from './History.module.css';
 
-const STORAGE_KEY = 'searchHistory';
 const HISTORY_LIMIT = 8;
 interface Props {
   selectedValue: (value: string) => void;
 }
 
 const getHistory = () => {
-  const saved = localStorage.getItem(STORAGE_KEY);
+  const saved = localStorage.getItem(StorageKey.SearchHistory);
   return saved ? JSON.parse(saved) : [];
 };
 
 const syncLocalStorageHistory = (history: string[]) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+  localStorage.setItem(StorageKey.SearchHistory, JSON.stringify(history));
 };
 
 const History = ({ selectedValue }: Props) => {
