@@ -24,7 +24,7 @@ const Books = ({ items }: { items: BookDocument[] }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.books}>
       {items.map((item, i) => (
         <Book
           key={`${item.isbn}-${i}`}

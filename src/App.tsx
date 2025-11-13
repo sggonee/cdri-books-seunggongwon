@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className={clsx(styles.container, 'l-container')}>
+      <main className={clsx(styles.app, 'l-container')}>
         <Outlet />
       </main>
     </>

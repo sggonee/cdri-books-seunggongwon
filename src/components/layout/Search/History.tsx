@@ -50,7 +50,7 @@ const History = ({ selectedValue }: Props) => {
   if (!history.length) return null;
 
   return (
-    <div className={styles.container} data-history="open">
+    <div className={styles.history} data-history="open">
       {history.map((value, index, arr) => (
         <button type="button" key={index} className="text-p2" onClick={() => selectedHistory(value)}>
           {value}

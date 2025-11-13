@@ -28,7 +28,7 @@ const SearchForm = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.searchForm}>
       <form onSubmit={onSubmit} className={styles.form}>
         <input
           required

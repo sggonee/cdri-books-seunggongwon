@@ -15,7 +15,7 @@ const routes = [
 
 const Header = () => {
   return (
-    <header className={clsx(styles.container)}>
+    <header className={clsx(styles.header)}>
       <h1 className={clsx(styles.logo, 'text-h1')}>CERTICOS BOOKS</h1>
       <nav className={styles.nav}>
         {routes.map((route) => (

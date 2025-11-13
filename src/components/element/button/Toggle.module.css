@@ -1,4 +1,4 @@
-.container {
+.toggle {
   display: flex;
   align-items: center;
 
@@ -7,7 +7,7 @@
   }
 }
 
-.container.is--active {
+.toggle.is--active {
   img {
     transform: rotate(180deg);
   }

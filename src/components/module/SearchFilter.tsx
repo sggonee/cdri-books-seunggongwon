@@ -31,7 +31,7 @@ const SearchFilter = ({ selectedValue, onClose }: Props) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.searchFilter}>
       <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.formInner}>
           <div className={styles.selector}>

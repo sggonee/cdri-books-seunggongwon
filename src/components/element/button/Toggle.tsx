@@ -13,7 +13,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Toggle = ({ children, className, active = false, ...props }: Props) => {
   return (
     <Button
-      className={clsx(styles.container, className, {
+      className={clsx(styles.toggle, className, {
         [styles['is--active']]: active,
       })}
       {...props}

@@ -17,7 +17,7 @@ const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
   const { title, authors, price, sale_price, thumbnail, contents, url } = item;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.detailBook}>
       <div className={styles.thumb}>
         <img src={thumbnail || PlaceholderImage} alt="" />
         <Like className={styles.like} active={isLiked} onClick={() => onToggleLike(item.title, item.isbn)} />

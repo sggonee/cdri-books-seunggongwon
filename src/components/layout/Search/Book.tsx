@@ -24,7 +24,7 @@ const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.book}>
       <div className={styles.thumb}>
         <img src={thumbnail || PlaceholderImage} alt="" />
         <Like className={styles.like} active={isLiked} onClick={() => onToggleLike(item.title, item.isbn)} />

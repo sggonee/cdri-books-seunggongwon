@@ -1,13 +1,13 @@
 import Icon from '@/components/element/Icon';
 import styles from './NotFound.module.css';
 
-const SearchNotFound = () => {
+const NotFound = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.notFound}>
       <Icon name="book" />
       <p className="text-p2">검색 결과가 없습니다.</p>
     </div>
   );
 };
 
-export default SearchNotFound;
+export default NotFound;
