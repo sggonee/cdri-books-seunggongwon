@@ -20,7 +20,7 @@
   border-radius: 10rem;
   background-color: var(--color-light-gray);
 
-  &:focus-within [data-history='open'] {
+  &:hover [data-history='open'] {
     display: block;
   }
 
