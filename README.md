@@ -1,7 +1,7 @@
 # 도서 검색
 
 - 프로젝트 개요
-  - Vite(+7), React(+19), module css, @tanstack/react-query 기반으로 도서 검색 어플리케이션을 구성합니다.
+  - Vite(+7), React(+19), Typescript, module css, @tanstack/react-query 기반으로 도서 검색 어플리케이션을 구성합니다.
   - 구현 범위
     - [x] 도서 목록
     - [x] 내가 찜한 목록
