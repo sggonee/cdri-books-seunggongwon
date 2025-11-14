@@ -1,7 +1,7 @@
-import Button from '@/components/element/button/Button';
-import Icon from '@/components/element/Icon';
-import History from '@/components/layout/search/History';
-import SearchFilter from '@/components/module/SearchFilter';
+import Button from '@/components/elements/button/Button';
+import Icon from '@/components/elements/Icon';
+import SearchFilter from '@/components/modules/SearchFilter';
+import History from '@/components/sections/search/History';
 import useSearch from '@/hooks/useSearch';
 import { FormEvent, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

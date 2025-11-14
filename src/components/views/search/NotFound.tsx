@@ -1,4 +1,4 @@
-import Icon from '@/components/element/Icon';
+import Icon from '@/components/elements/Icon';
 import styles from './NotFound.module.css';
 
 const NotFound = () => {

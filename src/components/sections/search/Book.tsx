@@ -1,7 +1,7 @@
-import Button from '@/components/element/button/Button';
-import Like from '@/components/element/button/Like';
-import Link from '@/components/element/button/Link';
-import Icon from '@/components/element/Icon';
+import Button from '@/components/elements/button/Button';
+import Like from '@/components/elements/button/Like';
+import Link from '@/components/elements/button/Link';
+import Icon from '@/components/elements/Icon';
 import { PlaceholderImage } from '@/constant/placeholder';
 import { BookDocument } from '@/controller/books/interface';
 import clsx from 'clsx';

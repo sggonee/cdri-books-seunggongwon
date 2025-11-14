@@ -1,4 +1,4 @@
-import Icon from '@/components/element/Icon';
+import Icon from '@/components/elements/Icon';
 import useSearch from '@/hooks/useSearch';
 import { StorageKey } from '@/utils/storage';
 import { useEffect, useState } from 'react';
