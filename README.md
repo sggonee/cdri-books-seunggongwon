@@ -45,4 +45,12 @@
   - icon 을 하나로 관리하는 컴포넌트를 고민했고, vite 의 [Glob Import](https://ko.vite.dev/guide/features.html#glob-import) 를 이용하여 컴포넌트를 구성했습니다. ([icons](https://github.com/sggonee/cdri-books-seunggongwon/blob/main/src/components/elements/Icon.tsx))
   - 성능 최적화
     - Suspense 를 조합하여, 청크 단위로 파일을 호출합니다.
-      - <img width="957" height="181" alt="image" src="https://github.com/user-attachments/assets/75563417-e4ab-4c10-948f-70bb3d123a6e" />
+        <img width="957" height="181" alt="image" src="https://github.com/user-attachments/assets/75563417-e4ab-4c10-948f-70bb3d123a6e" />
+    - memoization 을 이용하여 불필요한 렌더링 최소화
+        <img width="836" height="219" alt="image" src="https://github.com/user-attachments/assets/b6ab4c69-d638-48a7-83c8-449dccd64398" />
+    - 시각적인 정보 제공을 위해 하단 GIF 첨부
+     
+|before|after|
+|-|-|
+|![before_memoization](https://github.com/user-attachments/assets/f6b4ae36-4d24-400b-b1e1-fc1e6e6e5c68)|![after_memoization](https://github.com/user-attachments/assets/6a5f098e-294f-46f7-bf1d-49ec873fbb6f)|
+
