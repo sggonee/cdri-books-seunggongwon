@@ -13,6 +13,13 @@
     - [x] 무한 스크롤 (+10)
     - [x] 찜하기
     - [x] 네비게이션
+
+  |도서 검색|도서 목록|도서 상세|상세 필터|내가 찜한 책|검색 히스토리|
+  |-|-|-|-|-|-|
+  |<img width="1038" height="514" alt="image" src="https://github.com/user-attachments/assets/f6068609-626c-4347-a93e-99d007d7b2d8" />|<img width="969" height="432" alt="image" src="https://github.com/user-attachments/assets/34280f75-669a-4590-bdef-c746337ec253" />|<img width="949" height="368" alt="image" src="https://github.com/user-attachments/assets/04f65bb5-ecb9-41db-a208-1df5828c6ce5" />|<img width="495" height="266" alt="image" src="https://github.com/user-attachments/assets/0cbeeb7a-20a6-4b12-82c8-8332722da12c" />|<img width="1019" height="393" alt="image" src="https://github.com/user-attachments/assets/9380d571-784e-4db7-8fa2-5a6b7789f682" />|<img width="754" height="302" alt="image" src="https://github.com/user-attachments/assets/ca0bc4e3-0df6-478f-ae87-b077be75c71d" />|
+
+
+
 - 실행 방법 및 환경 설정
   - `npm run preview` 를 실행하면 자동 설치화 함께 `localhost:8080` 로 자동 오픈 됩니다.
 - 폴더 구조 및 주요 코드 설명
