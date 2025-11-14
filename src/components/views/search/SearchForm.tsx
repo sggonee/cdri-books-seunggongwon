@@ -1,10 +1,12 @@
+import { FormEvent, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
 import Button from '@/components/elements/button/Button';
 import Icon from '@/components/elements/Icon';
 import SearchFilter from '@/components/modules/SearchFilter';
 import History from '@/components/sections/search/History';
 import useSearch from '@/hooks/useSearch';
-import { FormEvent, useRef, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+
 import styles from './SearchForm.module.css';
 
 /**

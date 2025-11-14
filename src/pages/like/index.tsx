@@ -1,9 +1,10 @@
+import { useState } from 'react';
+
 import Books from '@/components/views/search/Books';
 import SearchNotFound from '@/components/views/search/NotFound';
 import Summary from '@/components/views/search/Summary';
 import { useLikeBooks } from '@/controller/books/query';
 import { getLikeHistory } from '@/utils/like';
-import { useState } from 'react';
 
 const getLikeBookCode = () => {
   return Object.entries(getLikeHistory()).map(([code]) => {

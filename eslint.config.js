@@ -4,6 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
+import prettier from 'prettier';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
@@ -22,7 +23,6 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
-      'prettier/prettier': 'error',
       'import/order': [
         'error',
         {

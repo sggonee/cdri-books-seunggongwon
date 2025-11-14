@@ -1,5 +1,6 @@
-import Icon from '@/components/elements/Icon';
 import { ButtonHTMLAttributes } from 'react';
+
+import Icon from '@/components/elements/Icon';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

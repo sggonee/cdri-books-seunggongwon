@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
 import Icon from '@/components/elements/Icon';
 import useSearch from '@/hooks/useSearch';
 import { StorageKey } from '@/utils/storage';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+
 import styles from './History.module.css';
 
 const HISTORY_LIMIT = 8;
@@ -39,7 +41,9 @@ const History = ({ selectedValue }: Props) => {
     const newHistory = history.filter((item) => item !== target);
     setHistory(newHistory);
     syncLocalStorageHistory(newHistory);
-    isLastItem && selectedHistory('');
+    if (isLastItem) {
+      selectedHistory('');
+    }
   };
 
   const selectedHistory = (value: string) => {

@@ -1,9 +1,10 @@
+import { useSearchParams } from 'react-router-dom';
+
 import Books from '@/components/views/search/Books';
 import SearchNotFound from '@/components/views/search/NotFound';
 import SearchForm from '@/components/views/search/SearchForm';
 import Summary from '@/components/views/search/Summary';
 import { useInfiniteBooks } from '@/controller/books/query';
-import { useSearchParams } from 'react-router-dom';
 
 /**
  * TODO

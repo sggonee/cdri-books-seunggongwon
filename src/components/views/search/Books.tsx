@@ -1,8 +1,10 @@
+import { useState } from 'react';
+
 import Book from '@/components/sections/search/Book';
 import { BookDocument } from '@/controller/books/interface';
 import { getLikeHistory } from '@/utils/like';
 import { setLocalStorageItem, StorageKey } from '@/utils/storage';
-import { useState } from 'react';
+
 import styles from './Books.module.css';
 
 const Books = ({ items }: { items: BookDocument[] }) => {

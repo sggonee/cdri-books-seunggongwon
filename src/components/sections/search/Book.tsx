@@ -1,10 +1,12 @@
+import clsx from 'clsx';
+
 import Button from '@/components/elements/button/Button';
 import Like from '@/components/elements/button/Like';
 import Link from '@/components/elements/button/Link';
 import Icon from '@/components/elements/Icon';
 import { PlaceholderImage } from '@/constant/placeholder';
 import { BookDocument } from '@/controller/books/interface';
-import clsx from 'clsx';
+
 import styles from './Book.module.css';
 import DetailBook from './DetailBook';
 

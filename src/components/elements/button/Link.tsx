@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 import { NavLink, NavLinkProps } from 'react-router';
+
 import style from './Button.module.css';
 
 interface Props extends NavLinkProps {

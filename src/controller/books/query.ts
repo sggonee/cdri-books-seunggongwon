@@ -1,5 +1,7 @@
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { useInfiniteQuery, useQueries } from '@tanstack/react-query';
+
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+
 import { getBook, getBooks } from './api';
 
 export const useLikeBooks = (likes: string[]) => {
