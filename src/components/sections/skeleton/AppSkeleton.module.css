@@ -1,0 +1,46 @@
+.appSkeleton {
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.input {
+  flex: 1;
+  height: 3rem;
+  background-color: var(--color-light-gray);
+  border-radius: 1rem;
+}
+
+.button {
+  width: 10rem;
+  height: 3rem;
+  background-color: var(--color-light-gray);
+  border-radius: 1rem;
+}
+
+.emptyWrapper {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.emptyIcon {
+  width: 12rem;
+  height: 12rem;
+  background-color: var(--color-light-gray);
+  border-radius: 50%;
+}
+
+.emptyText {
+  width: 18rem;
+  height: 3rem;
+  background-color: var(--color-light-gray);
+  border-radius: 1rem;
+}

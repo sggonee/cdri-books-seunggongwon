@@ -1,14 +1,17 @@
 import clsx from 'clsx';
+import { lazy, Suspense } from 'react';
 
 import Button from '@/components/elements/button/Button';
 import Like from '@/components/elements/button/Like';
 import Link from '@/components/elements/button/Link';
 import Icon from '@/components/elements/Icon';
+import BookDetailSkeleton from '@/components/sections/skeleton/BookDetailSkeleton';
 import { PlaceholderImage } from '@/constant/placeholder';
 import { BookDocument } from '@/controller/books/interface';
 
 import styles from './Book.module.css';
-import DetailBook from './DetailBook';
+
+const DetailBook = lazy(() => import('./DetailBook'));
 
 interface Props {
   index: number;
@@ -23,7 +26,11 @@ const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }
   const { title, authors, price, sale_price, thumbnail, url } = item;
 
   if (isOpenDetail) {
-    return <DetailBook item={item} isLiked={isLiked} onToggleLike={onToggleLike} onClose={() => onOpenDetail(-1)} />;
+    return (
+      <Suspense fallback={<BookDetailSkeleton />}>
+        <DetailBook item={item} isLiked={isLiked} onToggleLike={onToggleLike} onClose={() => onOpenDetail(-1)} />;
+      </Suspense>
+    );
   }
 
   return (
