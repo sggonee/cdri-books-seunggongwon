@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "clean": "rm -rf dist node_modules",
+    "preview": "npm run clean && npm ci && npm run build && vite preview"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.8",
