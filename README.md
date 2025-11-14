@@ -60,5 +60,5 @@
         |![before_memoization](https://github.com/user-attachments/assets/f6b4ae36-4d24-400b-b1e1-fc1e6e6e5c68)|![after_memoization](https://github.com/user-attachments/assets/6a5f098e-294f-46f7-bf1d-49ec873fbb6f)|
 
 - 구현 못한 범위
-   - 찜하기 무한스크롤
+   - 내가 찜한 책 > 무한스크롤
      - 개별 아이템 단위로 찜하기를 불러오고 있어 페이지네이션이 미지원 되고 있습니다. 별도의 기능으로 구현을 고려했으나 프로젝트 정리하는데 집중했습니다. 🙇‍♂️
