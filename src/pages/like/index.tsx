@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import Books from '@/components/views/search/Books';
 import SearchNotFound from '@/components/views/search/NotFound';
@@ -16,7 +16,7 @@ const getLikeBookCode = () => {
 const Like = () => {
   const [likes] = useState(getLikeBookCode());
   const data = useLikeBooks(likes);
-  const books = data.flatMap((item) => item.data?.documents ?? []);
+  const books = useMemo(() => data.flatMap((item) => item.data?.documents ?? []), [data]);
   const totalCount = books.length;
   return (
     <section className="like-section">

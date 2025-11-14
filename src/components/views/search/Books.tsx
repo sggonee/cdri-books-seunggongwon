@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import Book from '@/components/sections/search/Book';
 import { BookDocument } from '@/controller/books/interface';
@@ -11,7 +11,7 @@ const Books = ({ items }: { items: BookDocument[] }) => {
   const [openDetail, setOpenDetail] = useState(-1);
   const [likeHistory, setLikeHistory] = useState(getLikeHistory());
 
-  const onToggleLike = (title: string, code: string) => {
+  const onToggleLike = useCallback((title: string, code: string) => {
     const likes = getLikeHistory();
     const exists = likes[code];
 
@@ -23,7 +23,9 @@ const Books = ({ items }: { items: BookDocument[] }) => {
 
     setLocalStorageItem(StorageKey.Like, JSON.stringify(likes));
     setLikeHistory(likes);
-  };
+  }, []);
+
+  const onOpenDetail = useCallback((index: number) => setOpenDetail(index), []);
 
   return (
     <div className={styles.books}>
@@ -34,7 +36,7 @@ const Books = ({ items }: { items: BookDocument[] }) => {
           item={item}
           isLiked={!!likeHistory[item.isbn]}
           isOpenDetail={openDetail === i}
-          onOpenDetail={(index: number) => setOpenDetail(index)}
+          onOpenDetail={onOpenDetail}
           onToggleLike={onToggleLike}
         />
       ))}
