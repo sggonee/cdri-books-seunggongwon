@@ -28,7 +28,7 @@ const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }
   if (isOpenDetail) {
     return (
       <Suspense fallback={<BookDetailSkeleton />}>
-        <DetailBook item={item} isLiked={isLiked} onToggleLike={onToggleLike} onClose={() => onOpenDetail(-1)} />;
+        <DetailBook item={item} isLiked={isLiked} onToggleLike={onToggleLike} onClose={() => onOpenDetail(-1)} />
       </Suspense>
     );
   }
