@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { memo, useMemo } from 'react';
 
 import Button from '@/components/elements/button/Button';
 import Like from '@/components/elements/button/Like';
@@ -19,7 +18,7 @@ interface Props {
 
 const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
   const { title, authors, price, sale_price, thumbnail, contents, url } = item;
-  const description = useMemo(() => contents || '책 소개 문구가 없습니다.', [contents]);
+  const description = contents || '책 소개 문구가 없습니다.';
   return (
     <div className={styles.detailBook}>
       <div className={styles.thumb}>
@@ -66,4 +65,4 @@ const DetailBook = ({ item, isLiked, onToggleLike, onClose }: Props) => {
   );
 };
 
-export default memo(DetailBook);
+export default DetailBook;

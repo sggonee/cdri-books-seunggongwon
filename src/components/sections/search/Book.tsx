@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { lazy, memo, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 
 import Button from '@/components/elements/button/Button';
 import Like from '@/components/elements/button/Like';
@@ -56,4 +56,4 @@ const Book = ({ index, item, isLiked, isOpenDetail, onOpenDetail, onToggleLike }
   );
 };
 
-export default memo(Book);
+export default Book;
